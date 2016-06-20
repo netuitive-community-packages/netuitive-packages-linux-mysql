@@ -1,0 +1,42 @@
+{
+  "policy" : {
+    "id" : null,
+    "name" : "Linux MySQL - Elevated Percentage of Full Table Scans",
+    "description" : "The percentage of full table scans being performed is higher than normal.",
+    "scope" : {
+      "elementName" : "",
+      "elementType" : "SERVER",
+      "elementTags" : { }
+    },
+    "duration" : 900,
+    "conditions" : [ {
+      "metric" : "netuitive.linux.mysql.fulltablescans.percentage",
+      "wildcard" : null,
+      "analytic" : "baselineDeviation",
+      "operator" : ">",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    }, {
+      "metric" : "netuitive.linux.mysql.fulltablescans.percentage",
+      "wildcard" : null,
+      "analytic" : "contextualDeviation",
+      "operator" : ">",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    } ],
+    "actions" : [ {
+      "type" : "event",
+      "category" : 2
+    } ],
+    "enabled" : true,
+    "deleted" : false,
+    "originTenantId" : null,
+    "originPolicyId" : null,
+    "creatorEmail" : null,
+    "lastUpdated" : null
+  }
+}

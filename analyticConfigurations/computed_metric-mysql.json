@@ -1,0 +1,29 @@
+{
+  "analyticConfiguration" : {
+    "tenantId" : null,
+    "type" : "COMPUTED_METRIC",
+    "id" : null,
+    "packageId" : null,
+    "name" : "MySQL",
+    "scope" : {
+      "elementName" : null,
+      "elementType" : "SERVER",
+      "elementTags" : null
+    },
+    "metrics" : [ {
+      "match" : "netuitive.linux.mysql.fulltablescans.percentage",
+      "properties" : {
+        "expression" : "100 * ((data['mysql.Handler_read_rnd_next'].actual + data['mysql.Handler_read_rnd'].actual) / (data['mysql.Handler_read_rnd_next'].actual + data['mysql.Handler_read_rnd'].actual + data['mysql.Handler_read_first'].actual + data['mysql.Handler_read_next'].actual + data['mysql.Handler_read_key'].actual + data['mysql.Handler_read_prev'].actual))",
+        "fqn" : "netuitive.linux.mysql.fulltablescans.percentage",
+        "name" : "Percentage of Full Table Scans"
+      }
+    }, {
+      "match" : "netuitive.linux.mysql.connectionutilizationpercent",
+      "properties" : {
+        "expression" : "100 * (data['mysql.Connections'].actual / data['mysql.Max_used_connections'].actual)",
+        "fqn" : "netuitive.linux.mysql.connectionutilizationpercent",
+        "name" : "Connection Utilization Percent"
+      }
+    } ]
+  }
+}

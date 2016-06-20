@@ -1,0 +1,24 @@
+{
+  "analyticConfiguration" : {
+    "tenantId" : null,
+    "type" : "METRIC_META",
+    "id" : null,
+    "packageId" : null,
+    "name" : "MySQL",
+    "scope" : {
+      "elementName" : null,
+      "elementType" : "SERVER",
+      "elementTags" : null
+    },
+    "metrics" : [ {
+      "match" : "netuitive.linux.mysql.*",
+      "properties" : {
+        "tags" : {
+          "utilization" : true,
+          "unit" : "percent"
+        },
+        "validMax" : 100
+      }
+    } ]
+  }
+}

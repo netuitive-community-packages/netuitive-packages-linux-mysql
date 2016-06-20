@@ -1,0 +1,42 @@
+{
+  "policy" : {
+    "id" : null,
+    "name" : "Linux MySQL - Too Many Slow Queries",
+    "description" : "The number of slow queries is higher than expected.",
+    "scope" : {
+      "elementName" : "",
+      "elementType" : "SERVER",
+      "elementTags" : { }
+    },
+    "duration" : 900,
+    "conditions" : [ {
+      "metric" : "mysql.Slow_queries",
+      "wildcard" : null,
+      "analytic" : "baselineDeviation",
+      "operator" : ">",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    }, {
+      "metric" : "mysql.Slow_queries",
+      "wildcard" : null,
+      "analytic" : "contextualDeviation",
+      "operator" : ">",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    } ],
+    "actions" : [ {
+      "type" : "event",
+      "category" : 2
+    } ],
+    "enabled" : true,
+    "deleted" : false,
+    "originTenantId" : null,
+    "originPolicyId" : null,
+    "creatorEmail" : null,
+    "lastUpdated" : null
+  }
+}
