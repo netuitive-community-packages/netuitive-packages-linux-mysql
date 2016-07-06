@@ -19,6 +19,11 @@
         },
         "validMax" : 100
       }
+    }, {
+      "match" : "mysql.Created_tmp_tables",
+      "properties" : {
+        "STATISTIC" : "SUM"
+      }
     } ]
   }
 }
