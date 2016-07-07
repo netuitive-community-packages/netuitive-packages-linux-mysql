@@ -8,7 +8,8 @@
     "scope" : {
       "elementName" : null,
       "elementType" : "SERVER",
-      "elementTags" : null
+      "elementTags" : null,
+      "metricMatches" : "^mysql\\..*"
     },
     "metrics" : [ {
       "match" : "netuitive.linux.mysql.*",
