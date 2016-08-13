@@ -19,11 +19,11 @@
         "name" : "Percentage of Full Table Scans"
       }
     }, {
-      "match" : "netuitive.linux.mysql.connectionutilizationpercent",
+      "match" : "netuitive.linux.mysql.slowqueries.percentage",
       "properties" : {
-        "expression" : "100 * (data['mysql.Connections'].actual / data['mysql.Max_used_connections'].actual)",
-        "fqn" : "netuitive.linux.mysql.connectionutilizationpercent",
-        "name" : "Connection Utilization Percent"
+        "expression" : "(data['mysql.Queries'].actual == null || data['mysql.Queries'].actual == 0) ? 0 : 100 * (data['mysql.Slow_queries'].actual / data['mysql.Queries'].actual)",
+        "fqn" : "netuitive.linux.mysql.slowqueries.percentage",
+        "name" : "Slow Query Percentage"
       }
     } ]
   }
