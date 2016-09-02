@@ -10,7 +10,7 @@
     },
     "distro" : {
       "logo" : "http://assets.app.netuitive.com/pkg/logo/netuitive/banner_logo.png",
-      "download" : "https://github.com/netuitive-community-packages/netuitive-packages-linux-nginx/archive/master.zip"
+      "download" : "https://github.com/netuitive-community-packages/netuitive-packages-linux-mysql/archive/master.zip"
     },
     "compatibility" : [ "INFRASTRUCTURE:MySQL" ],
     "tags" : [ ],
