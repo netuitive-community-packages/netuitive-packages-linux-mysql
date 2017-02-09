@@ -1,6 +1,6 @@
 #netuitive.packages.linux.mysql 2.0.0
 
-For detailed information on this package, please refer to the [online documentation](https://help.app.netuitive.com/Content/Misc/Datasources/Netuitive/integrations/my_sql.htm).
+For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Integrations/my_sql.htm).
 
 ##Release History
 
