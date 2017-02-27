@@ -1,8 +1,12 @@
-#netuitive.packages.linux.mysql 2.0.0
+#netuitive.packages.linux.mysql 2.1.0
 
 For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Integrations/my_sql.htm).
 
 ##Release History
+
+### Version 2.1.0
+
+* Updated gridstack dashboard layouts
 
 ###Version 2.0.0
 
