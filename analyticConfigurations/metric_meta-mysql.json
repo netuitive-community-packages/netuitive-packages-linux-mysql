@@ -1,55 +1,56 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "METRIC_META",
-    "id" : null,
-    "packageId" : null,
-    "name" : "MySQL",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "SERVER",
-      "elementTags" : null,
-      "metricMatches" : "^mysql\\..*"
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "mysql.Bytes_.*",
+        "properties": {
+          "statistic": "sum",
+          "tags": {
+            "unit": "bytes"
+          }
+        }
+      },
+      {
+        "match": "^mysql\\.(Connections|Handler_read_|Opened_|Queries|Slow_|Table_).*$",
+        "properties": {
+          "statistic": "sum",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "^mysql.Max_used_connections",
+        "properties": {
+          "statistic": "max",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "^mysql\\.(Open_|Prepared_|Threads_).*$",
+        "properties": {
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "netuitive.linux.mysql.*",
+        "properties": {
+          "tags": {
+            "unit": "percent"
+          },
+          "validMax": 100
+        }
+      }
+    ],
+    "name": "MySQL",
+    "scope": {
+      "elementType": "SERVER",
+      "metricMatches": "^mysql\\..*"
     },
-    "metrics" : [ {
-      "match" : "mysql.Bytes_.*",
-      "properties" : {
-        "statistic" : "sum",
-        "tags" : {
-          "unit" : "bytes"
-        }
-      }
-    }, {
-      "match" : "^mysql\\.(Connections|Handler_read_|Opened_|Queries|Slow_|Table_).*$",
-      "properties" : {
-        "statistic" : "sum",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "^mysql.Max_used_connections",
-      "properties" : {
-        "statistic" : "max",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "^mysql\\.(Open_|Prepared_|Threads_).*$",
-      "properties" : {
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "netuitive.linux.mysql.*",
-      "properties" : {
-        "tags" : {
-          "unit" : "percent"
-        },
-        "validMax" : 100
-      }
-    } ]
+    "type": "METRIC_META"
   }
 }

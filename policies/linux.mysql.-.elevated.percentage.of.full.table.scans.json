@@ -1,48 +1,30 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Linux MySQL - Elevated Percentage of Full Table Scans",
-    "description" : "The percentage of full table scans being performed is higher than normal.",
-    "scope" : {
-      "elementName" : "",
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 900,
-    "conditions" : [ {
-      "metric" : "netuitive.linux.mysql.fulltablescans.percentage",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "baselineDeviation",
-      "operator" : ">",
-      "level" : null,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    }, {
-      "metric" : "netuitive.linux.mysql.fulltablescans.percentage",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "contextualDeviation",
-      "operator" : ">",
-      "level" : null,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 2
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 2,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "baselineDeviation",
+        "metric": "netuitive.linux.mysql.fulltablescans.percentage",
+        "operator": ">"
+      },
+      {
+        "analytic": "contextualDeviation",
+        "metric": "netuitive.linux.mysql.fulltablescans.percentage",
+        "operator": ">"
+      }
+    ],
+    "deleted": false,
+    "description": "The percentage of full table scans being performed is higher than normal.",
+    "duration": 900,
+    "enabled": true,
+    "name": "Linux MySQL - Elevated Percentage of Full Table Scans",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }
