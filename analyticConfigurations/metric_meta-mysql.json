@@ -11,9 +11,18 @@
         }
       },
       {
-        "match": "^mysql\\.(Connections|Handler_read_|Opened_|Queries|Slow_|Table_).*$",
+        "match": "^mysql\\.(Connections|Handler_read_|Opened_|Table_).*$",
         "properties": {
           "statistic": "sum",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "^mysql\\.(Queries|Slow_queries)",
+        "properties": {
+          "statistic": "max",
           "tags": {
             "unit": "count"
           }
