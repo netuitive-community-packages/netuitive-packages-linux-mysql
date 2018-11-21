@@ -6,6 +6,8 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+### Version 2.2.0
+
 * Adjusted build to use metricly-cli for validation
 * Changed Queries and Slow_queries metric statistics to max
 
