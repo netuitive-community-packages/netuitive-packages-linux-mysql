@@ -1,100 +1,110 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "ACE",
-    "id" : null,
-    "packageId" : null,
-    "name" : "MySQL",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "SERVER",
-      "elementTags" : null,
-      "metricMatches" : "^mysql\\..*"
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "mysql.Bytes_.*",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "mysql.Handler_read_.*",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "mysql.Max_used_connections",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "mysql.Open_",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "mysql.Opened_.*",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "mysql.Prepared_stmt_count",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "mysql.Queries",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "mysql.Slow_queries",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "mysql.Table_locks_immediate",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "mysql.Table_locks_wait",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "mysql.Threads_cached",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "mysql.Threads_.*",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.linux.mysql.fulltablescans.*",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.linux.mysql.slowqueries.*",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      }
+    ],
+    "name": "MySQL",
+    "scope": {
+      "elementType": "SERVER",
+      "metricMatches": "^mysql\\..*"
     },
-    "metrics" : [ {
-      "match" : "mysql.Bytes_.*",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "mysql.Handler_read_.*",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "mysql.Max_used_connections",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "mysql.Open_",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "mysql.Opened_.*",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "mysql.Prepared_stmt_count",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "mysql.Queries",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "mysql.Slow_queries",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "mysql.Table_locks_immediate",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "mysql.Table_locks_wait",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "mysql.Threads_cached",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "mysql.Threads_.*",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.linux.mysql.fulltablescans.*",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.linux.mysql.slowqueries.*",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    } ]
+    "type": "ACE"
   }
 }

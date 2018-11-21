@@ -1,30 +1,28 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "COMPUTED_METRIC",
-    "id" : null,
-    "packageId" : null,
-    "name" : "MySQL",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "SERVER",
-      "elementTags" : null,
-      "metricMatches" : "^mysql\\..*"
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "netuitive.linux.mysql.fulltablescans.percentage",
+        "properties": {
+          "expression": "100 * ((data['mysql.Handler_read_rnd_next'].actual + data['mysql.Handler_read_rnd'].actual) / (data['mysql.Handler_read_rnd_next'].actual + data['mysql.Handler_read_rnd'].actual + data['mysql.Handler_read_first'].actual + data['mysql.Handler_read_next'].actual + data['mysql.Handler_read_key'].actual + data['mysql.Handler_read_prev'].actual))",
+          "fqn": "netuitive.linux.mysql.fulltablescans.percentage",
+          "name": "Percentage of Full Table Scans"
+        }
+      },
+      {
+        "match": "netuitive.linux.mysql.slowqueries.percentage",
+        "properties": {
+          "expression": "(data['mysql.Queries'].actual == null || data['mysql.Queries'].actual == 0) ? 0 : 100 * (data['mysql.Slow_queries'].actual / data['mysql.Queries'].actual)",
+          "fqn": "netuitive.linux.mysql.slowqueries.percentage",
+          "name": "Slow Query Percentage"
+        }
+      }
+    ],
+    "name": "MySQL",
+    "scope": {
+      "elementType": "SERVER",
+      "metricMatches": "^mysql\\..*"
     },
-    "metrics" : [ {
-      "match" : "netuitive.linux.mysql.fulltablescans.percentage",
-      "properties" : {
-        "expression" : "100 * ((data['mysql.Handler_read_rnd_next'].actual + data['mysql.Handler_read_rnd'].actual) / (data['mysql.Handler_read_rnd_next'].actual + data['mysql.Handler_read_rnd'].actual + data['mysql.Handler_read_first'].actual + data['mysql.Handler_read_next'].actual + data['mysql.Handler_read_key'].actual + data['mysql.Handler_read_prev'].actual))",
-        "fqn" : "netuitive.linux.mysql.fulltablescans.percentage",
-        "name" : "Percentage of Full Table Scans"
-      }
-    }, {
-      "match" : "netuitive.linux.mysql.slowqueries.percentage",
-      "properties" : {
-        "expression" : "(data['mysql.Queries'].actual == null || data['mysql.Queries'].actual == 0) ? 0 : 100 * (data['mysql.Slow_queries'].actual / data['mysql.Queries'].actual)",
-        "fqn" : "netuitive.linux.mysql.slowqueries.percentage",
-        "name" : "Slow Query Percentage"
-      }
-    } ]
+    "type": "COMPUTED_METRIC"
   }
 }
