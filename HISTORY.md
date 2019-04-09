@@ -2,6 +2,8 @@
 
 ### Version next
 
+### Version 2.3.0
+
 * Convert computed metrics to new format
 
 ### Version 2.2.0
