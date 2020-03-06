@@ -2,8 +2,6 @@
 
 ### Version next
 
-### Version 2.3.1
-
 * Convert single elementType to elementTypes array in policy scope
 
 ### Version 2.3.0
