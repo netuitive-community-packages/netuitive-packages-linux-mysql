@@ -24,7 +24,9 @@
     "enabled": true,
     "name": "Linux MySQL - Elevated Percentage of Full Table Scans",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

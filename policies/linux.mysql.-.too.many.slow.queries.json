@@ -20,7 +20,9 @@
     "enabled": true,
     "name": "Linux MySQL - Too Many Slow Queries",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }
